@@ -49,9 +49,12 @@
       <a class="resource-link citation-link" href="#citation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7H4v7h5V7Zm0 7c0 4-3 5-5 5M20 7h-5v7h5V7Zm0 7c0 4-3 5-5 5"/></svg>BibTeX</a>
     </div>
     <p class="hero-takeaway">A compact world state. <strong>Grounded in agents. Built for driving.</strong></p>
-    <figure class="teaser">
-      <button class="figure-button" data-zoom aria-label="Enlarge AgentWorld framework overview"><img src="static/images/method.webp" width="1767" height="684" alt="AgentWorld framework: driving context is grounded through 4D geometry and 2D vision into agent tokens, which support language reasoning, actions and trajectories." fetchpriority="high"></button>
-      <figcaption>From multi-view observations to <strong>physically grounded agent tokens</strong> — a structured interface for reasoning and planning. <span class="figure-hint">Click figures to enlarge ↗</span></figcaption>
+    <figure class="teaser decision-demo">
+      <video controls playsinline preload="none" poster="static/images/decision-poster.jpg" width="2400" height="964" aria-label="AgentWorld driving decision demonstration" aria-describedby="decision-caption">
+        <source src="static/videos/decision.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="static/videos/decision.mp4">Download the decision demonstration.</a>
+      </video>
+      <figcaption id="decision-caption">AgentWorld driving decision demonstration. <a href="static/videos/decision.mp4">Open video ↗</a></figcaption>
     </figure>
   </section>
 
@@ -73,6 +76,10 @@
 
   <section class="method-band" id="method"><div class="section-shell content-section">
     <div class="section-heading"><p class="eyebrow">02 / Method</p><h2>Ground. Reason. Plan.</h2><p>Three learning stages turn discrete agent tokens into a useful world state for driving.</p></div>
+    <figure class="teaser framework-overview">
+      <button class="figure-button" data-zoom aria-label="Enlarge AgentWorld framework overview"><img src="static/images/method.webp" width="1767" height="684" alt="AgentWorld framework: driving context is grounded through 4D geometry and 2D vision into agent tokens, which support language reasoning, actions and trajectories." loading="lazy"></button>
+      <figcaption>From multi-view observations to <strong>physically grounded agent tokens</strong> — a structured interface for reasoning and planning. <span class="figure-hint">Click figures to enlarge ↗</span></figcaption>
+    </figure>
     <div class="training-stages"><article><span class="stage-number">01</span><h3>Physical grounding</h3><p>Anchor agent queries to offline 4D geometry and 2D visual features. Hungarian matching supervises category, 3D boxes, and future motion.</p></article><article><span class="stage-number">02</span><h3>Reasoning-oriented SFT</h3><p>Teach the policy to identify relevant agents, explain interaction risks, and produce high-level actions and future ego waypoints.</p></article><article><span class="stage-number">03</span><h3>Agent-oriented RL</h3><p>Use GRPO with format, perception, action, trajectory, and interaction rewards, including collision, clearance, and time-to-collision terms.</p></article></div>
     <div class="grounding-detail"><div><p class="eyebrow">Multimodal routed anchoring</p><h3>Two complementary views.<br>One grounded agent state.</h3><p>The geometry branch provides spatial structure and temporal consistency; the vision branch provides appearance and semantic context. Independent token-wise gates and cross-attention fuse both into grounded agent tokens.</p><p class="small-note">At inference, the policy uses the MLLM-only input-output format. Auxiliary grounding heads and routed anchoring modules are not required.</p></div><figure><button class="figure-button" data-zoom aria-label="Enlarge multimodal routed anchoring diagram"><img src="static/images/modality_route.webp" width="945" height="414" alt="Geometry and vision branches independently gate and cross-attend agent queries, then fuse their outputs into grounded tokens." loading="lazy"></button><figcaption><span class="figure-label">Figure 4.</span> Multimodal routed anchoring.</figcaption></figure></div>
   </div></section>
@@ -96,13 +103,7 @@
 
   <section class="examples-band" id="examples"><div class="section-shell content-section">
     <div class="section-heading"><p class="eyebrow">04 / Qualitative results</p><h2>See the agents behind the decision.</h2><p>Agent tokens make the participants influencing a driving decision explicitly addressable.</p></div>
-    <figure class="decision-demo">
-      <video controls playsinline preload="none" poster="static/images/decision-poster.jpg" width="2400" height="964" aria-label="AgentWorld driving decision demonstration" aria-describedby="decision-caption">
-        <source src="static/videos/decision.mp4" type="video/mp4">
-        Your browser does not support embedded video. <a href="static/videos/decision.mp4">Download the decision demonstration.</a>
-      </video>
-      <figcaption id="decision-caption">AgentWorld driving decision demonstration. <a href="static/videos/decision.mp4">Open video ↗</a></figcaption>
-    </figure>
+
     <figure><button class="figure-button" data-zoom aria-label="Enlarge qualitative comparison and agent-grounded reasoning"><img src="static/images/qualitative.webp" width="1770" height="1065" alt="Figure 5 compares VLA-World and AgentWorld in daytime and nighttime scenes, including predicted trajectories, grounded agent tokens and reasoning traces." loading="lazy"></button><figcaption><span class="figure-label">Figure 5.</span> Trajectories and reasoning in two driving scenes. AgentWorld associates relevant traffic participants with discrete agent tokens.</figcaption></figure>
     <div class="reasoning-example"><div><p class="eyebrow">Inside a reasoning trace</p><h3>From participant to interaction risk.</h3><p>The policy can refer to a specific agent and connect its predicted behavior to the planned maneuver.</p><p class="small-note">Excerpt from Scene 2 in Figure 5; emphasis added.</p></div><blockquote>“Main risk is <code>&lt;agent_2&gt;</code> and <code>&lt;agent_3&gt;</code>, two cars ahead-right with small future clearance and likely path proximity as the ego moves forward. <code>&lt;agent_1&gt;</code> is a lead car in front but keeps a stable gap.”</blockquote></div>
     <details class="ablation-details"><summary>Explore the agent-state ablations <span aria-hidden="true">+</span></summary><figure><button class="figure-button" data-zoom aria-label="Enlarge agent token ablation studies"><img src="static/images/agent_num.webp" width="1770" height="378" alt="Figure 6 shows perception and planning performance as the number of agent tokens increases, plus planning with and without ego-status." loading="lazy"></button><figcaption><span class="figure-label">Figure 6.</span> More agent tokens improve perception and planning before saturation. AgentWorld also shows a smaller gap when ego-status is removed.</figcaption></figure></details>
