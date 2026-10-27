@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgentWorld | NeurIPS 2026</title>
+  <meta name="description" content="AgentWorld learns compact, physically grounded agent-centric world states for reasoning and trajectory planning in autonomous driving. NeurIPS 2026.">
+  <meta name="author" content="Guoqing Wang, Pin Tang, Xiangxuan Ren, Chao Ma">
+  <meta name="keywords" content="AgentWorld, autonomous driving, vision-language-action, world models, agent-centric reasoning, NeurIPS 2026">
+  <meta name="theme-color" content="#6454a4">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AgentWorld — Learning Agent-centric Vision-Language-Action World Models for Autonomous Driving">
+  <meta property="og:description" content="A compact world state. Grounded in agents. Built for driving.">
+  <meta property="og:image" content="static/images/social-preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="citation_title" content="Learning Agent-centric Vision-Language-Action World Models for Autonomous Driving">
+  <meta name="citation_author" content="Wang, Guoqing">
+  <meta name="citation_author" content="Tang, Pin">
+  <meta name="citation_author" content="Ren, Xiangxuan">
+  <meta name="citation_author" content="Ma, Chao">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Advances in Neural Information Processing Systems">
+  <link rel="icon" href="static/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script defer src="static/js/index.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Learning Agent-centric Vision-Language-Action World Models for Autonomous Driving","name":"AgentWorld","author":[{"@type":"Person","name":"Guoqing Wang"},{"@type":"Person","name":"Pin Tang"},{"@type":"Person","name":"Xiangxuan Ren"},{"@type":"Person","name":"Chao Ma"}],"isPartOf":{"@type":"PublicationIssue","name":"Advances in Neural Information Processing Systems (NeurIPS 2026)"},"keywords":["autonomous driving","vision-language-action","world models","agent-centric reasoning"]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <nav class="nav-shell" aria-label="Main navigation">
+    <a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 9 24 8 23 24 7 23 8 9 23 24M24 8 7 23"/><circle cx="8" cy="9" r="4"/><circle cx="24" cy="8" r="4"/><circle cx="23" cy="24" r="4"/><circle cx="7" cy="23" r="4"/></svg>AgentWorld</a>
+    <div class="nav-links"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#examples">Examples</a><a href="#citation">Citation</a></div>
+    <span class="nav-venue">NeurIPS 2026</span>
+  </nav>
+</header>
+<main id="main-content">
+  <section class="hero section-shell" id="top">
+    <p class="venue"><span></span> NeurIPS 2026</p>
+    <p class="project-name">Agent<span>World</span></p>
+    <h1>Learning Agent-centric Vision-Language-Action<br class="desktop-break"> World Models for Autonomous Driving</h1>
+    <div class="authors"><a href="https://wgqtmac.github.io/">Guoqing Wang</a><a href="https://scholar.google.com/citations?user=au87GKsAAAAJ&amp;hl=zh-CN">Pin Tang</a><a href="https://scholar.google.com/citations?user=P20Rk5oAAAAJ&amp;hl=zh-CN">Xiangxuan Ren</a><a href="https://vision.sjtu.edu.cn/">Chao Ma<sup>*</sup></a></div>
+    <a class="institution-logo" href="https://www.sjtu.edu.cn/" aria-label="Shanghai Jiao Tong University official website"><img src="static/images/sjtu-logo.png" width="4283" height="1408" alt="Shanghai Jiao Tong University — 上海交通大学校标"></a>
+    <p class="affiliation">MoE Key Lab of Artificial Intelligence, Institute of AI<br>Shanghai Jiao Tong University</p>
+    <p class="author-note"><sup>*</sup> Corresponding author</p>
+    <div class="publication-links" aria-label="Research resources">
+      <a class="resource-link disabled" data-resource="paper" aria-disabled="true" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8Zm0 0v5h5M8 12h8M8 16h6"/></svg>Paper</a>
+      <a class="resource-link disabled" data-resource="code" aria-disabled="true" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/></svg>Code</a>
+      <a class="resource-link citation-link" href="#citation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7H4v7h5V7Zm0 7c0 4-3 5-5 5M20 7h-5v7h5V7Zm0 7c0 4-3 5-5 5"/></svg>BibTeX</a>
+    </div>
+    <p class="hero-takeaway">A compact world state. <strong>Grounded in agents. Built for driving.</strong></p>
+    <figure class="teaser">
+      <button class="figure-button" data-zoom aria-label="Enlarge AgentWorld framework overview"><img src="static/images/method.webp" width="1767" height="684" alt="AgentWorld framework: driving context is grounded through 4D geometry and 2D vision into agent tokens, which support language reasoning, actions and trajectories." fetchpriority="high"></button>
+      <figcaption>From multi-view observations to <strong>physically grounded agent tokens</strong> — a structured interface for reasoning and planning. <span class="figure-hint">Click figures to enlarge ↗</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="abstract-band" id="overview">
+    <div class="reading-shell">
+      <p class="eyebrow">The idea</p><h2>Reason over the agents that shape the future.</h2>
+      <p class="lead">What world state should a VLA world model reason over to support planning beyond pixel-level prediction?</p>
+      <p>Recent vision-language-action (VLA) world models reason about imagined futures, but dense visual tokens preserve many appearance details that are irrelevant to driving. <strong>AgentWorld</strong> instead represents the scene as compact, structured, temporally evolving agents.</p>
+      <p>Each discrete agent token is dynamically grounded to a surrounding participant and encodes semantic identity, 3D geometry, motion, and interaction context. Through <strong>explicit geometric grounding</strong>, <strong>reasoning-oriented supervised fine-tuning</strong>, and <strong>agent-oriented reinforcement learning</strong>, these tokens become a shared interface for reasoning and trajectory planning. Open-loop and closed-loop experiments show stronger planning and more interpretable world states.</p>
+      <details class="full-abstract"><summary>Read the full abstract <span aria-hidden="true">+</span></summary><p id="full-abstract-text">Recent progress in integrating vision-language-action (VLA) models with world modeling has significantly advanced end-to-end autonomous driving by allowing systems to reason about imagined futures instead of merely reacting to current observations. However, most world VLA models generate future frames at the pixel level with plenty of dense visual tokens. Although such generated futures can be visually plausible, they preserve many driving-irrelevant appearance details, i.e., only a small portion of the tokens directly encode critical planning-relevant factors, such as agent geometry, motion dynamics, and interactions. This introduces a significant performance bottleneck. An important question thus arises: what world state should a world VLA model reason over to support planning beyond pixel-level prediction? We argue that planning-oriented world modeling should focus on a compact and structured agent-centric latent state that captures the interactions between objects in the driving scene over time. As such, we introduce AgentWorld, an agent-centric VLA world model that uses discrete agent tokens jointly for reasoning and trajectory planning. Each token is dynamically grounded to a surrounding agent associated with its object’s state, such as semantic identity, 3D geometry, motion, and interaction context. AgentWorld learns these tokens through three key processes: explicit geometric grounding, reasoning-oriented supervised fine-tuning, and agent-oriented reinforcement learning. Extensive open-loop and closed-loop experiments under diverse driving scenarios show that AgentWorld enhances planning capabilities, fully exploits visual evidence and agent dynamics, and yields interpretable agent-centric world states.</p></details>
+    </div>
+  </section>
+
+  <section class="section-shell content-section">
+    <div class="section-heading"><p class="eyebrow">01 / A different world state</p><h2>Beyond future pixels</h2><p>Represent the participants, their motion, and their interactions in a form the policy can reason over.</p></div>
+    <figure><button class="figure-button" data-zoom aria-label="Enlarge comparison of VLA, world models, VLA world models and AgentWorld"><img src="static/images/intro.webp" width="1773" height="537" alt="Figure 1 compares VLA, world models, VLA world models and the agent-centric model across causal reasoning, spatiotemporal modeling and agent interaction." loading="lazy"></button><figcaption><span class="figure-label">Figure 1.</span> AgentWorld brings together causal reasoning, spatiotemporal modeling, and explicit agent interaction through discrete latent agent states.</figcaption></figure>
+    <div class="principles"><article><span class="token-icon blue">&lt;agent_i&gt;</span><h3>Compact</h3><p>Addressable agent slots replace dense future-frame tokens as the planning interface.</p></article><article><span class="token-icon green">3D + motion</span><h3>Physically grounded</h3><p>Semantics, geometry, and future trajectories tie latent states to real traffic participants.</p></article><article><span class="token-icon purple">&lt;think&gt; → &lt;answer&gt;</span><h3>Interaction-aware</h3><p>Agent-grounded reasoning connects surrounding participants to the ego trajectory.</p></article></div>
+  </section>
+
+  <section class="method-band" id="method"><div class="section-shell content-section">
+    <div class="section-heading"><p class="eyebrow">02 / Method</p><h2>Ground. Reason. Plan.</h2><p>Three learning stages turn discrete agent tokens into a useful world state for driving.</p></div>
+    <div class="training-stages"><article><span class="stage-number">01</span><h3>Physical grounding</h3><p>Anchor agent queries to offline 4D geometry and 2D visual features. Hungarian matching supervises category, 3D boxes, and future motion.</p></article><article><span class="stage-number">02</span><h3>Reasoning-oriented SFT</h3><p>Teach the policy to identify relevant agents, explain interaction risks, and produce high-level actions and future ego waypoints.</p></article><article><span class="stage-number">03</span><h3>Agent-oriented RL</h3><p>Use GRPO with format, perception, action, trajectory, and interaction rewards, including collision, clearance, and time-to-collision terms.</p></article></div>
+    <div class="grounding-detail"><div><p class="eyebrow">Multimodal routed anchoring</p><h3>Two complementary views.<br>One grounded agent state.</h3><p>The geometry branch provides spatial structure and temporal consistency; the vision branch provides appearance and semantic context. Independent token-wise gates and cross-attention fuse both into grounded agent tokens.</p><p class="small-note">At inference, the policy uses the MLLM-only input-output format. Auxiliary grounding heads and routed anchoring modules are not required.</p></div><figure><button class="figure-button" data-zoom aria-label="Enlarge multimodal routed anchoring diagram"><img src="static/images/modality_route.webp" width="945" height="414" alt="Geometry and vision branches independently gate and cross-attend agent queries, then fuse their outputs into grounded tokens." loading="lazy"></button><figcaption><span class="figure-label">Figure 4.</span> Multimodal routed anchoring.</figcaption></figure></div>
+  </div></section>
+
+  <section class="section-shell content-section" id="results">
+    <div class="section-heading"><p class="eyebrow">03 / Experiments</p><h2>Grounded states. Stronger driving.</h2><p>Evaluated on nuScenes for open-loop planning and Bench2Drive for closed-loop driving.</p></div>
+    <div class="metric-strip"><div><span class="metric-value">81.17</span><span class="metric-title">Driving Score ↑</span><span class="metric-context">Bench2Drive · Table 4</span></div><div><span class="metric-value">61.36<span>%</span></span><span class="metric-title">Success Rate ↑</span><span class="metric-context">Bench2Drive · Table 4</span></div><div><span class="metric-value">0.40<span> m</span></span><span class="metric-title">Average L2 error ↓</span><span class="metric-context">nuScenes · UniAD · with ego-state</span></div><div><span class="metric-value">0.11<span>%</span></span><span class="metric-title">Average collision ↓</span><span class="metric-context">nuScenes · UniAD · with ego-state</span></div></div>
+    <div class="results-selector" role="tablist" aria-label="Evaluation benchmark"><button id="tab-closed" role="tab" aria-selected="true" aria-controls="panel-closed" tabindex="0">Closed-loop · Bench2Drive</button><button id="tab-open" role="tab" aria-selected="false" aria-controls="panel-open" tabindex="-1">Open-loop · nuScenes</button></div>
+    <div id="panel-closed" role="tabpanel" aria-labelledby="tab-closed" tabindex="0">
+      <div class="table-scroll"><table><caption>Closed-loop driving on Bench2Drive (CARLA)</caption><thead><tr><th scope="col">Method</th><th scope="col">Driving Score ↑</th><th scope="col">Success Rate (%) ↑</th><th scope="col">Efficiency ↑</th><th scope="col">Comfortness ↑</th></tr></thead><tbody>
+      <tr><th scope="row">AD-MLP</th><td>18.05</td><td>0.00</td><td>48.45</td><td>22.63</td></tr><tr><th scope="row">UniAD-Base</th><td>45.81</td><td>16.36</td><td>129.21</td><td>43.58</td></tr><tr><th scope="row">VAD</th><td>42.35</td><td>15.00</td><td><strong>157.94</strong></td><td>46.01</td></tr><tr><th scope="row">TCP-traj</th><td>59.90</td><td>30.00</td><td>76.54</td><td>18.08</td></tr><tr><th scope="row">DriveAdapter</th><td>64.22</td><td>33.08</td><td>70.22</td><td>16.01</td></tr><tr><th scope="row">Orion</th><td>77.74</td><td>54.62</td><td>151.48</td><td>17.38</td></tr><tr><th scope="row">AutoVLA</th><td>78.84</td><td>57.73</td><td>146.93</td><td>39.33</td></tr><tr class="ours"><th scope="row">AgentWorld <span>Ours</span></th><td><strong>81.17</strong></td><td><strong>61.36</strong></td><td>147.82</td><td><strong>54.39</strong></td></tr>
+      </tbody></table></div><p class="table-note">Table 4 of the paper. Best values among the compared methods are bold. Higher is better for all four metrics.</p>
+    </div>
+    <div id="panel-open" role="tabpanel" aria-labelledby="tab-open" tabindex="0" hidden>
+      <div class="table-scroll"><table><caption>nuScenes planning · averages over 1, 2, and 3 seconds</caption><thead><tr><th scope="col" rowspan="2">Method</th><th scope="col" colspan="2">ST-P3 metrics</th><th scope="col" colspan="2">UniAD metrics</th></tr><tr><th scope="col">L2 (m) ↓</th><th scope="col">Collision (%) ↓</th><th scope="col">L2 (m) ↓</th><th scope="col">Collision (%) ↓</th></tr></thead><tbody>
+      <tr><th scope="row">OmniDrive</th><td>0.84</td><td>0.94</td><td>—</td><td>—</td></tr><tr><th scope="row">FSDrive</th><td>0.53</td><td>0.17</td><td>0.83</td><td>0.16</td></tr><tr><th scope="row">VLA-World</th><td>0.30</td><td>0.10</td><td>0.45</td><td>0.12</td></tr><tr class="ours"><th scope="row">AgentWorld</th><td>0.27</td><td>0.08</td><td>0.45</td><td>0.12</td></tr><tr><th scope="row">OmniDrive*</th><td>0.33</td><td>0.30</td><td>—</td><td>—</td></tr><tr><th scope="row">FSDrive*</th><td>0.28</td><td>0.10</td><td>0.42</td><td>0.12</td></tr><tr><th scope="row">VLA-World*</th><td>0.26</td><td>0.08</td><td>0.42</td><td>0.12</td></tr><tr class="ours"><th scope="row">AgentWorld*</th><td><strong>0.25</strong></td><td><strong>0.07</strong></td><td><strong>0.40</strong></td><td><strong>0.11</strong></td></tr>
+      </tbody></table></div><p class="table-note">Selected methods from Table 1. * uses additional ego-state information. — indicates an unreported result. Compare methods within the same ego-state setting and evaluation protocol.</p>
+    </div>
+    <div class="efficiency-row"><div><p class="eyebrow">Compact by design</p><h3>Fewer tokens.<br>More useful visual evidence.</h3><p>The visual grounding ablation measures planning with and without images. AgentWorld shows a larger performance gap when visual evidence is removed, while using a shorter output sequence.</p><div class="efficiency-stat"><strong>98</strong><span>average sequence tokens<br><small>vs. 653 for VLA-World · Figure 2</small></span></div><p class="small-note">Latency: 0.31 s for AgentWorld vs. 0.40 s for VLA-World in the paper’s Table 7 setting.</p></div><figure><button class="figure-button" data-zoom aria-label="Enlarge visual grounding and token efficiency results"><img src="static/images/token_num.webp" width="810" height="405" alt="Figure 2 shows planning with and without visual inputs and average sequence length: Qwen2-VL 60, FSDrive 447, VLA-World 653 and AgentWorld 98 tokens." loading="lazy"></button><figcaption><span class="figure-label">Figure 2.</span> Visual grounding and token efficiency (UniAD metric). This ablation uses its own evaluation setting.</figcaption></figure></div>
+  </section>
+
+  <section class="examples-band" id="examples"><div class="section-shell content-section">
+    <div class="section-heading"><p class="eyebrow">04 / Qualitative results</p><h2>See the agents behind the decision.</h2><p>Agent tokens make the participants influencing a driving decision explicitly addressable.</p></div>
+    <figure><button class="figure-button" data-zoom aria-label="Enlarge qualitative comparison and agent-grounded reasoning"><img src="static/images/qualitative.webp" width="1770" height="1065" alt="Figure 5 compares VLA-World and AgentWorld in daytime and nighttime scenes, including predicted trajectories, grounded agent tokens and reasoning traces." loading="lazy"></button><figcaption><span class="figure-label">Figure 5.</span> Trajectories and reasoning in two driving scenes. AgentWorld associates relevant traffic participants with discrete agent tokens.</figcaption></figure>
+    <div class="reasoning-example"><div><p class="eyebrow">Inside a reasoning trace</p><h3>From participant to interaction risk.</h3><p>The policy can refer to a specific agent and connect its predicted behavior to the planned maneuver.</p><p class="small-note">Excerpt from Scene 2 in Figure 5; emphasis added.</p></div><blockquote>“Main risk is <code>&lt;agent_2&gt;</code> and <code>&lt;agent_3&gt;</code>, two cars ahead-right with small future clearance and likely path proximity as the ego moves forward. <code>&lt;agent_1&gt;</code> is a lead car in front but keeps a stable gap.”</blockquote></div>
+    <details class="ablation-details"><summary>Explore the agent-state ablations <span aria-hidden="true">+</span></summary><figure><button class="figure-button" data-zoom aria-label="Enlarge agent token ablation studies"><img src="static/images/agent_num.webp" width="1770" height="378" alt="Figure 6 shows perception and planning performance as the number of agent tokens increases, plus planning with and without ego-status." loading="lazy"></button><figcaption><span class="figure-label">Figure 6.</span> More agent tokens improve perception and planning before saturation. AgentWorld also shows a smaller gap when ego-status is removed.</figcaption></figure></details>
+  </div></section>
+
+  <section class="section-shell citation-section" id="citation"><div class="citation-header"><div><p class="eyebrow">Reference</p><h2>BibTeX</h2></div><button class="copy-button" id="copy-bibtex" type="button">Copy citation</button></div><pre><code id="bibtex-code">@inproceedings{wang2026agentworld,
+  title={Learning Agent-centric Vision-Language-Action World Models for Autonomous Driving},
+  author={Wang, Guoqing and Tang, Pin and Ren, Xiangxuan and Ma, Chao},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2026}
+}</code></pre><p id="copy-status" class="copy-status" role="status" aria-live="polite"></p></section>
+</main>
+<footer><div class="section-shell"><a class="footer-brand" href="#top">AgentWorld <span>NeurIPS 2026</span></a><p>Shanghai Jiao Tong University</p><p class="credits">Adapted from <a href="https://github.com/vlaworld/vlaworld.github.io">VLA-World</a> and the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>, based on <a href="https://nerfies.github.io/">Nerfies</a>.<br>Website licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p></div></footer>
+<dialog id="figure-dialog" aria-label="Enlarged paper figure"><div class="dialog-toolbar"><span>Paper figure</span><button id="close-figure" type="button" aria-label="Close enlarged figure">Close <span aria-hidden="true">×</span></button></div><img id="enlarged-figure" alt=""><p id="enlarged-caption"></p></dialog>
+</body>
+</html>
